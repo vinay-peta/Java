@@ -1,0 +1,52 @@
+Streams:
+	- Like a fancy iterator over the collection of data
+	- A sequence of elements from a source that supports data processing opertions
+
+Collections vs Streams
+	- Collections is about storing the data(LinkedList, ArrayList)
+	- Streams is about computing the data(filter, map, sorted, reduce, find, match)
+	- Collections are iterated through an iterator where as streams does it behind the scenes
+
+Intermediate vs Terminal operations
+	- operations which return another stream are intermediate Ex: filter, sorted, map, limit, distinct
+	- operations which produce a result 
+		-Ex: boolean: allMatch, anyMatch; void: forEach; Optional: findAny; collect, count
+	
+Short-circuiting
+	- need not to process the whole steam to find
+	- Ex: allMatch, noneMatch, findFirst, and findAny
+
+flatMap
+	- flatMap method lets you replace each value of a stream with another stream and then concatenates all the generated streams into a single stream.
+	
+findAny
+	- findAny method returns an arbitrary element(Optional<T>) of the current stream
+
+Optional
+	- The Optional<T> class (java.util.Optional) is a container class to represent the existence or absence of a value
+
+Reduce
+	- finding the sum of numbers
+	
+Overview
+--------
+Operation	Type ReturnType  				Type/functional 	Function				Descriptor
+filter		Intermediate					Stream<T>			Predicate<T>			T -> boolean
+distinct	Intermediate (stateful-unbounded)	Stream<T>	 	 
+skip		Intermediate (stateful-bounded)	Stream<T>			long	 
+limit		Intermediate (stateful-bounded)	Stream<T>			long	 
+map			Intermediate					Stream<R>			Function<T, R>			T -> R
+flatMap		Intermediate					Stream<R>			Function<T, Stream<R>>	T -> Stream<R>
+sorted		Intermediate (stateful-unbounded)	Stream<T>		Comparator<T>			(T, T) -> int
+anyMatch	Terminal						boolean				Predicate<T>			T -> boolean
+noneMatch	Terminal						boolean				Predicate<T>			T -> boolean
+allMatch	Terminal						boolean				Predicate<T>			T -> boolean
+findAny		Terminal						Optional<T>	 	 
+findFirst	Terminal						Optional<T>	 	 
+forEach		Terminal						void				Consumer<T>				T -> void
+collect		terminal						R					Collector<T, A, R>	 
+reduce		Terminal (stateful-bounded)		Optional<T>			BinaryOperator<T>		(T, T) -> T
+count		Terminal						long	 	 
+
+Primitive streams
+- mapToInt().sum()

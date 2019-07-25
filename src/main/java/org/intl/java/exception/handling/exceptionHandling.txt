@@ -1,0 +1,39 @@
+Throwable:
+		  Throwable class is the super class of all Exceptions and Errors in the java language.
+		  Only Throwable class and it's subclasses can be the argument type in 'catch' clause.
+
+Error:
+		- Indicates serious problem and we should not try to catch
+		- Error(StackOverflowError, OutOfMemoryError), RuntimeException(and its subclasses), AIOB, NullPointerException are unchecked exceptions
+Exception:
+		- Indicates conditions which we might to catch
+
+Checked Exceptions vs Unchecked Exceptions:
+		- Exceptions which are checked by the compiler - checked exception
+		- Exceptions which are not checked by the compiler - unchecked exception
+		- Both checked/unchecked exception occurs at runtime
+		
+		- Error, RuntimeException(and its subclasses), AIOB, NullPointerException are unchecked exceptions
+		- IOException, FileNotFoundException, Interrupted Exception(and its subclasses) are checked exceptions
+		
+		- Exception class is known as partially checked exception(It contains both checked and unchecked)
+		
+final vs finally vs finalize
+		- final is a modifier applicable for classes, methods and variables
+		- finally is a block associated with try catch to perform clean up code
+		- JVM (Garbage collector) calls finalize method to perform clean up activities
+		
+throw
+		- create an exception; we can use it only for Throwable types 
+		- If if it a custom exception create a class which extends RunTimeException
+		- throw should be the last statement in that loop; any line after throw is unreachable
+
+throws
+		- required only for checked exception
+		- delegate the handling responsibility to caller method
+
+
+		
+		
+		
+		
